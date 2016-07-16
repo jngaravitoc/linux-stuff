@@ -1,0 +1,8 @@
+# Purge boot/
+pkg -l linux-* | awk '/^ii/{ print $2}' | grep -v -e `uname -r | cut
+-f1,2 -d"-"` | grep -e [0-9] | grep -E "(image|headers)" | xargs sudo
+apt-get -y purge 
+# Free space on boot/
+dpkg -l linux-* | awk '/^ii/{ print $2}' | grep -v -e `uname -r | cut
+-f1,2 -d"-"` | grep -e [0-9] | grep -E "(image|headers)" | xargs sudo
+dpkg --remove
