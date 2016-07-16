@@ -1,2 +1,2 @@
 # linux-stuff
-some usefull commands in linux
+some useful commands in linux
